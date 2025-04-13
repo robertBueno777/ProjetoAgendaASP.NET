@@ -1,0 +1,107 @@
+﻿@model ProjetoAgenda.ViewModel.CadastroCompletoViewModel;
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 rounded-4" style="background-color: lightgrey;">
+                <div class="card-body p-5">
+                    <h2 class="text-center mb-4" style="font-family: 'Inter', sans-serif; font-weight: 700; color: #343a40;">
+                        <div style="text-align:center; font-size: 40px">
+                           <strong> Dados do Contato </strong
+                               <p>
+
+
+                               </p>
+                        </div>
+                    </h2>
+                    <dl class="row fs-5">
+                        <dt class="col-sm-4">Nome:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.Nome</dd>
+
+                        <dt class="col-sm-4">Email:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.Email</dd>
+
+                        <dt class="col-sm-4">Data de Nascimento:  </dt>
+                        <dd class="col-sm-8">@Model.Usuario.DataNascimento.ToString("dd/MM/yyyy")</dd>
+
+ 
+                        <dt class="col-sm-4">Telefones:</dt>
+                        <dd class="col-sm-8">
+                            <ul>
+                                @foreach(var telefones in Model.Usuario.Telefones)
+                                {  
+                                    <li>Id do telefone: @telefones.TelefoneId </li>
+                                    <li>telefone: @telefones.NumeroTelefone </li>
+                                    <li>Situacao: @telefones.Situacao </li>
+                                }
+
+                            </ul>
+                            </dd>
+                          
+                        <div style="text-align:center; font-size: 40px">
+                            <strong>Dados do endereço</strong>
+                            <p>
+
+
+                               </p>
+                        </div>
+                        <dt class="col-sm-4">Endereço Id:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.Endereco.EnderecoId</dd>
+
+                        <dt class="col-sm-4">Estado:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.Endereco.Estado</dd>
+
+                        <dt class="col-sm-4">Bairro:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.Endereco.Bairro</dd>
+
+                        <dt class="col-sm-4">Cidade:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.Endereco.Cidade</dd>
+
+                        <dt class="col-sm-4">Cep:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.Endereco.Cep</dd>
+
+                        <dt class="col-sm-4">Logradouro:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.Endereco.Logradouro</dd>
+
+                        <dt class="col-sm-4">Numero da casa:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.Endereco.NumeroEndereco</dd>
+
+                        <dt class="col-sm-4">Complemento:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.Endereco.Complemento</dd>
+
+                        <dt class="col-sm-4">Situação:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.Endereco.Situacao</dd>
+
+                        <div style="text-align:center; font-size: 40px">
+                            <strong>Dados de Documentos</strong>
+                            <p>
+
+
+                               </p>
+                        </div>
+
+                        <dt class="col-sm-4">Id do documento:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.DocumentoIdentificacao.DocumentoIdentificacaoId</dd>
+
+
+                        <dt class="col-sm-4">Tipo documento:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.DocumentoIdentificacao.TipoDocumento</dd>
+
+                        <dt class="col-sm-4">Número do documento:</dt>
+                        <dd class="col-sm-8">@Model.Usuario.DocumentoIdentificacao.NumeroDocumento</dd>
+
+
+
+
+                    </dl>
+
+                    <div class="text-center mt-4">
+                        <a href="@Url.Action("Index", "Usuario")" class="btn btn-dark px-4 py-2 rounded-pill">
+                            Voltar para lista
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,178 @@
+﻿@model ProjetoAgenda.ViewModel.CadastroCompletoViewModel
+
+@{
+    ViewData["Title"] = "Editar Contato";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-10">
+            <div class="card shadow-lg rounded-4 p-4">
+                <h2 class="text-center mb-4">Editar Contato</h2>
+
+                <form asp-controller="Usuario" asp-action="EditarContato" method="post">
+                    <input type="hidden" asp-for="Usuario.UsuarioId" />
+
+                    <p class="text-center fs-5"><strong>Dados Pessoais</strong></p>
+
+                    <div class="mb-3">
+                        <label asp-for="Usuario.Nome" class="form-label"></label>
+                        <input asp-for="Usuario.Nome" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Usuario.Email" class="form-label"></label>
+                        <input asp-for="Usuario.Email" class="form-control" type="email" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Usuario.DataNascimento" class="form-label"></label>
+                        <input asp-for="Usuario.DataNascimento" class="form-control" type="date" />
+                    </div>
+
+                    <p class="text-center fs-5"><strong>Documento</strong></p>
+
+                    <input type="hidden" asp-for="Usuario.DocumentoIdentificacao.DocumentoIdentificacaoId" />
+
+                    <div class="mb-3">
+                        <label asp-for="Usuario.DocumentoIdentificacao.TipoDocumento" class="form-label"></label>
+                        <select asp-for="Usuario.DocumentoIdentificacao.TipoDocumento" class="form-select">
+                            <option value="">Selecione o tipo de documento</option>
+                            <option value="cpf">CPF</option>
+                            <option value="rg">RG</option>
+                            <option value="cnh">CNH</option>
+                            <option value="passaporte">Passaporte</option>
+                            <option value="titulo_eleitor">Título de Eleitor</option>
+                            <option value="cert_reservista">Certificado de Reservista</option>
+                            <option value="ctps">CTPS</option>
+                            <option value="carteira_profissional">Carteira Profissional</option>
+                            <option value="rne">RNE</option>
+                            <option value="cert_nascimento">Certidão de Nascimento</option>
+                            <option value="cert_casamento">Certidão de Casamento</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Usuario.DocumentoIdentificacao.NumeroDocumento" class="form-label"></label>
+                        <input asp-for="Usuario.DocumentoIdentificacao.NumeroDocumento" class="form-control" />
+                    </div>
+
+                    <p class="text-center fs-5"><strong>Endereço</strong></p>
+
+                    <input type="hidden" asp-for="Usuario.Endereco.EnderecoId" />
+
+                    <div class="mb-3">
+                        <label asp-for="Usuario.Endereco.Logradouro" class="form-label"></label>
+                        <select asp-for="Usuario.Endereco.Logradouro" class="form-select">
+                            <option value="">Selecione o tipo de logradouro</option>
+                            <option value="rua">Rua</option>
+                            <option value="avenida">Avenida</option>
+                            <option value="travessa">Travessa</option>
+                            <option value="alameda">Alameda</option>
+                            <option value="estrada">Estrada</option>
+                            <option value="rodovia">Rodovia</option>
+                            <option value="vielas">Viela</option>
+                            <option value="praça">Praça</option>
+                            <option value="largo">Largo</option>
+                            <option value="quadra">Quadra</option>
+                            <option value="conjunto">Conjunto</option>
+                            <option value="bairro">Bairro</option>
+                            <option value="sitio">Sítio</option>
+                            <option value="fazenda">Fazenda</option>
+                            <option value="chacara">Chácara</option>
+                            <option value="outro">Outro</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Usuario.Endereco.NumeroEndereco" class="form-label"></label>
+                        <input asp-for="Usuario.Endereco.NumeroEndereco" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Usuario.Endereco.Cep" class="form-label"></label>
+                        <input asp-for="Usuario.Endereco.Cep" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Usuario.Endereco.Bairro" class="form-label"></label>
+                        <input asp-for="Usuario.Endereco.Bairro" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Usuario.Endereco.Cidade" class="form-label"></label>
+                        <input asp-for="Usuario.Endereco.Cidade" class="form-control" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Usuario.Endereco.Estado" class="form-label"></label>
+                        <select asp-for="Usuario.Endereco.Estado" class="form-select">
+                            <option value="">Selecione o estado</option>
+                            <option value="AC">Acre</option>
+                            <option value="AL">Alagoas</option>
+                            <option value="AP">Amapá</option>
+                            <option value="AM">Amazonas</option>
+                            <option value="BA">Bahia</option>
+                            <option value="CE">Ceará</option>
+                            <option value="DF">Distrito Federal</option>
+                            <option value="ES">Espírito Santo</option>
+                            <option value="GO">Goiás</option>
+                            <option value="MA">Maranhão</option>
+                            <option value="MT">Mato Grosso</option>
+                            <option value="MS">Mato Grosso do Sul</option>
+                            <option value="MG">Minas Gerais</option>
+                            <option value="PA">Pará</option>
+                            <option value="PB">Paraíba</option>
+                            <option value="PR">Paraná</option>
+                            <option value="PE">Pernambuco</option>
+                            <option value="PI">Piauí</option>
+                            <option value="RJ">Rio de Janeiro</option>
+                            <option value="RN">Rio Grande do Norte</option>
+                            <option value="RS">Rio Grande do Sul</option>
+                            <option value="RO">Rondônia</option>
+                            <option value="RR">Roraima</option>
+                            <option value="SC">Santa Catarina</option>
+                            <option value="SP">São Paulo</option>
+                            <option value="SE">Sergipe</option>
+                            <option value="TO">Tocantins</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Usuario.Endereco.Complemento" class="form-label"></label>
+                        <input asp-for="Usuario.Endereco.Complemento" class="form-control" />
+                    </div>
+
+                    <!-- 🔽 CAMPO ADICIONADO: Situação -->
+                    <div class="mb-3">
+                        <label asp-for="Usuario.Endereco.Situacao" class="form-label">Situação</label>
+                        <select asp-for="Usuario.Endereco.Situacao" class="form-select">
+                            <option value="">Selecione</option>
+                            <option value="Ativo">Ativo</option>
+                            <option value="Inativo">Inativo</option>
+                        </select>
+                        <span asp-validation-for="Usuario.Endereco.Situacao" class="text-danger"></span>
+                    </div>
+                    <!-- 🔼 FIM DO CAMPO ADICIONADO -->
+
+                    <p class="text-center fs-5"><strong>Telefones</strong></p>
+
+                    @for (int i = 0; i < Model.Usuario.Telefones.Count; i++)
+                    {
+                        <input type="hidden" asp-for="Usuario.Telefones[@i].TelefoneId" />
+                        <div class="mb-3">
+                            <label asp-for="Usuario.Telefones[@i].NumeroTelefone" class="form-label">Telefone</label>
+                            <input asp-for="Usuario.Telefones[@i].NumeroTelefone" class="form-control" placeholder="(00) 00000-0000" />
+                            <span asp-validation-for="Usuario.Telefones[@i].NumeroTelefone" class="text-danger"></span>
+                        </div>
+                    }
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">Salvar</button>
+                        <a asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

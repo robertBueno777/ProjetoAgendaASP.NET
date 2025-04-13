@@ -97,3 +97,4 @@ C:\Users\rbueno\Desktop\aspNet\ProjetoAgenda\ProjetoAgenda\bin\Debug\net8.0\runt
 C:\Users\rbueno\Desktop\aspNet\ProjetoAgenda\ProjetoAgenda\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\rbueno\Desktop\aspNet\ProjetoAgenda\ProjetoAgenda\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 C:\Users\rbueno\Desktop\aspNet\ProjetoAgenda\ProjetoAgenda\obj\Debug\net8.0\ProjetoA.F04C6279.Up2Date
+C:\Users\rbueno\Desktop\aspNet\ProjetoAgenda\ProjetoAgenda\obj\Debug\net8.0\ProjetoAgenda.sourcelink.json

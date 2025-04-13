@@ -6,21 +6,21 @@ namespace ProjetoAgenda.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly AppDbContext _context;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(AppDbContext context)
     {
-        _logger = logger;
+        _context = context;
+    }
+    public IActionResult Privacy()
+    {
+        return View();
     }
 
     public IActionResult Index()
     {
-        return View();
-    }
-
-    public IActionResult Privacy()
-    {
-        return View();
+        var usuarios = _context.Usuarios.ToList();
+        return View(usuarios);
     }
 
 

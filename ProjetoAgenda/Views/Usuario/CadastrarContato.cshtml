@@ -1,4 +1,6 @@
-﻿@{
+﻿@model ProjetoAgenda.ViewModel.CadastroCompletoViewModel;
+
+@{
     ViewData["Title"] = "Cadastrar Contato";
 }
 
@@ -11,58 +13,62 @@
                 </div>
                 <div class="card-body bg-light">
                     <form asp-controller="Usuario" asp-action="CadastrarNoBanco" method="post">
-                        <p style="text-align:center; font-size: 20px; ">
-                            <strong>Dados Pessoais</strong>
-                        </p>
+                        <p class="text-center fs-5 fw-bold">Dados Pessoais</p>
+
                         <div class="mb-3">
-                            <label for="NomeUsuario" class="form-label">Nome</label>
-                            <input type="text" class="form-control" id="NomeUsuario" name="NomeUsuario" required>
+                            <label asp-for="Usuario.Nome" class="form-label"></label>
+                            <input asp-for="Usuario.Nome" class="form-control" />
+                            <span asp-validation-for="Usuario.Nome" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label for="EmailUsuario" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="EmailUsuario" name="EmailUsuario" required>
+                            <label asp-for="Usuario.Email" class="form-label"></label>
+                            <input asp-for="Usuario.Email" class="form-control" />
+                            <span asp-validation-for="Usuario.Email" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label for="DataNascimento" class="form-label">Data de Nascimento</label>
-                            <input type="text" class="form-control" id="DataNascimento" name="DataNascimento" required>
+                            <label asp-for="Usuario.DataNascimento" class="form-label"></label>
+                            <input asp-for="Usuario.DataNascimento" type="date" class="form-control" />
+                            <span asp-validation-for="Usuario.DataNascimento" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label for="DataNascimentoContato" class="form-label">Telefone</label>
-                            <input type="text" class="form-control" id="DataNascimentoContato" name="DataNascimentoContato" placeholder="(00) 00000-0000" required>
+                            <label asp-for="Telefone[0].NumeroTelefone" class="form-label">Telefone</label>
+                            <input asp-for="Telefone[0].NumeroTelefone" class="form-control" placeholder="(00) 00000-0000" />
+                            <span asp-validation-for="Telefone[0].NumeroTelefone" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label for="TipoDocumento" class="form-label">Tipo de Documento</label>
-                            <select class="form-select" name="TipoDocumento" required aria-label="Tipo de documento">
+                            <label asp-for="DocumentoIdentificacao.TipoDocumento" class="form-label"></label>
+                            <select asp-for="DocumentoIdentificacao.TipoDocumento" class="form-select">
                                 <option selected disabled>Selecione o tipo de documento</option>
-                                <option value="cpf">CPF - Cadastro de Pessoa Física</option>
-                                <option value="rg">RG - Registro Geral (Identidade)</option>
-                                <option value="cnh">CNH - Carteira Nacional de Habilitação</option>
+                                <option value="cpf">CPF</option>
+                                <option value="rg">RG</option>
+                                <option value="cnh">CNH</option>
                                 <option value="passaporte">Passaporte</option>
                                 <option value="titulo_eleitor">Título de Eleitor</option>
                                 <option value="cert_reservista">Certificado de Reservista</option>
-                                <option value="ctps">CTPS - Carteira de Trabalho</option>
-                                <option value="carteira_profissional">Carteira Profissional (OAB, CRM, CREA, etc)</option>
-                                <option value="rne">RNE - Registro Nacional de Estrangeiro</option>
+                                <option value="ctps">CTPS</option>
+                                <option value="carteira_profissional">Carteira Profissional</option>
+                                <option value="rne">RNE</option>
                                 <option value="cert_nascimento">Certidão de Nascimento</option>
                                 <option value="cert_casamento">Certidão de Casamento</option>
                             </select>
+                            <span asp-validation-for="DocumentoIdentificacao.TipoDocumento" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label for="NumeroDocumento" class="form-label">Numero do documento</label>
-                            <input type="text" class="form-control" id="NumeroDocumento" name="NumeroDocumento" required>
+                            <label asp-for="DocumentoIdentificacao.NumeroDocumento" class="form-label"></label>
+                            <input asp-for="DocumentoIdentificacao.NumeroDocumento" class="form-control" />
+                            <span asp-validation-for="DocumentoIdentificacao.NumeroDocumento" class="text-danger"></span>
                         </div>
-                        <p style="text-align:center; font-size: 20px; ">
-                            <strong>Endereço</strong>
-                        </p>
+
+                        <p class="text-center fs-5 fw-bold">Endereço</p>
 
                         <div class="mb-3">
-                            <label for="Logradouro" class="form-label">Logradouro</label>
-                            <select class="form-select" name="Logradouro" required aria-label="Logradouro">
+                            <label asp-for="Endereco.Logradouro" class="form-label"></label>
+                            <select asp-for="Endereco.Logradouro" class="form-select">
                                 <option selected disabled>Selecione o tipo de logradouro</option>
                                 <option value="rua">Rua</option>
                                 <option value="avenida">Avenida</option>
@@ -81,31 +87,36 @@
                                 <option value="chacara">Chácara</option>
                                 <option value="outro">Outro</option>
                             </select>
+                            <span asp-validation-for="Endereco.Logradouro" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label for="NumeroEndereco" class="form-label">Número do endereço</label>
-                            <input type="number" class="form-control" id="NumeroEndereco" name="NumeroEndereco" required>
+                            <label asp-for="Endereco.NumeroEndereco" class="form-label"></label>
+                            <input asp-for="Endereco.NumeroEndereco" class="form-control" />
+                            <span asp-validation-for="Endereco.NumeroEndereco" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label for="Cep" class="form-label">Cep</label>
-                            <input type="text" class="form-control" id="Cep" name="Cep" required>
+                            <label asp-for="Endereco.Cep" class="form-label"></label>
+                            <input asp-for="Endereco.Cep" class="form-control" />
+                            <span asp-validation-for="Endereco.Cep" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label for="Bairro" class="form-label">Bairro</label>
-                            <input type="text" class="form-control" id="Bairro" name="Bairro" required>
+                            <label asp-for="Endereco.Bairro" class="form-label"></label>
+                            <input asp-for="Endereco.Bairro" class="form-control" />
+                            <span asp-validation-for="Endereco.Bairro" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label for="Cidade" class="form-label">Cidade</label>
-                            <input type="text" class="form-control" id="Cidade" name="Cidade" required>
+                            <label asp-for="Endereco.Cidade" class="form-label"></label>
+                            <input asp-for="Endereco.Cidade" class="form-control" />
+                            <span asp-validation-for="Endereco.Cidade" class="text-danger"></span>
                         </div>
 
                         <div class="mb-3">
-                            <label for="Estado" class="form-label">Estado</label>
-                            <select class="form-select" name="Estado" required aria-label="Estado">
+                            <label asp-for="Endereco.Estado" class="form-label"></label>
+                            <select asp-for="Endereco.Estado" class="form-select">
                                 <option selected disabled>Selecione o estado</option>
                                 <option value="AC">Acre (AC)</option>
                                 <option value="AL">Alagoas (AL)</option>
@@ -135,12 +146,17 @@
                                 <option value="SE">Sergipe (SE)</option>
                                 <option value="TO">Tocantins (TO)</option>
                             </select>
+                            <span asp-validation-for="Endereco.Estado" class="text-danger"></span>
                         </div>
+                        <input type="hidden" name="Endereco.Situacao" value="Ativo" />
+                        <input type="hidden" name="Telefone[0].Situacao" value="Ativo" />
+
 
                         <div class="mb-3">
-                            <label for="Complemento" class="form-label">Complemento</label>
-                            <input type="text" class="form-control" id="Complemento" name="Complemento" required>
-                        </div>                       
+                            <label asp-for="Endereco.Complemento" class="form-label"></label>
+                            <input asp-for="Endereco.Complemento" class="form-control" />
+                            <span asp-validation-for="Endereco.Complemento" class="text-danger"></span>
+                        </div>
 
                         <div class="text-center">
                             <button type="submit" class="btn btn-success ms-2">Salvar</button>

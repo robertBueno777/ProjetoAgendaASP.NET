@@ -5,17 +5,21 @@ namespace ProjetoAgenda.Models
 {
     [Table("DocumentoIdentificacao")]
 
-    public class DocumentoIdentificacao : Usuario 
+    public class DocumentoIdentificacao 
     {
         [Key]
         public int DocumentoIdentificacaoId { get; set; }
+
+        [ForeignKey("Usuario")]
         public int UsuarioId { get; set; }
 
-        [Required(ErrorMessage = "Tipo documento é obrigatório.")]
         public string TipoDocumento { get; set; }
 
-        [Required(ErrorMessage = "Numero de documento é obrigatório.")]
         public string NumeroDocumento { get; set; }
+
+
+        public Usuario Usuario { get; set; }
+
 
     }
 }

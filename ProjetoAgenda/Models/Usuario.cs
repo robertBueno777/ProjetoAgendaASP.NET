@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ProjetoAgenda.Models
 {
@@ -6,10 +7,21 @@ namespace ProjetoAgenda.Models
     
     public class Usuario
     {
-        public int IdUsuario { get; set; }
-        public string NomeUsuario { get; set; }
-        public string EmailUsuario { get; set; }
-        public string DataNascimentoUsuario { get; set; }
+        [Key]
+        public int UsuarioId { get; set; }
+
+        public string Nome { get; set; }
+
+        public string Email { get; set; }
+
+        public DateTime DataNascimento{ get; set; }
+
+        public Endereco Endereco { get; set; }
+
+        public DocumentoIdentificacao DocumentoIdentificacao { get; set; }
+
+        public List<Telefone> Telefones { get; set; }
+
 
     }
 }
