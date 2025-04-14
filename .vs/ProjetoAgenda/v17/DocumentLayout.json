@@ -7,32 +7,8 @@
       "RelativeMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|solutionrelative:projetoagenda\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|c:\\users\\rbueno\\desktop\\aspnet\\projetoagenda\\projetoagenda\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|solutionrelative:projetoagenda\\models\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|c:\\users\\rbueno\\desktop\\aspnet\\projetoagenda\\projetoagenda\\views\\usuario\\editarcontato.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|solutionrelative:projetoagenda\\views\\usuario\\editarcontato.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|c:\\users\\rbueno\\desktop\\aspnet\\projetoagenda\\projetoagenda\\views\\usuario\\cadastrarcontato.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|solutionrelative:projetoagenda\\views\\usuario\\cadastrarcontato.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|c:\\users\\rbueno\\desktop\\aspnet\\projetoagenda\\projetoagenda\\viewmodel\\cadastrocompletoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|solutionrelative:projetoagenda\\viewmodel\\cadastrocompletoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|c:\\users\\rbueno\\desktop\\aspnet\\projetoagenda\\projetoagenda\\models\\documentoidentificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|solutionrelative:projetoagenda\\models\\documentoidentificacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|c:\\users\\rbueno\\desktop\\aspnet\\projetoagenda\\projetoagenda\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|solutionrelative:projetoagenda\\models\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|c:\\users\\rbueno\\desktop\\aspnet\\projetoagenda\\projetoagenda\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|solutionrelative:projetoagenda\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|c:\\users\\rbueno\\desktop\\aspnet\\projetoagenda\\projetoagenda\\views\\usuario\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -41,18 +17,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|c:\\users\\rbueno\\desktop\\aspnet\\projetoagenda\\projetoagenda\\views\\usuario\\apagarcontato.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|solutionrelative:projetoagenda\\views\\usuario\\apagarcontato.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|c:\\users\\rbueno\\desktop\\aspnet\\projetoagenda\\projetoagenda\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|solutionrelative:projetoagenda\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|c:\\users\\rbueno\\desktop\\aspnet\\projetoagenda\\projetoagenda\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|solutionrelative:projetoagenda\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|c:\\users\\rbueno\\desktop\\aspnet\\projetoagenda\\projetoagenda\\projetoagenda.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{09FC9F5D-C23B-4DA6-85E8-2A659B7D5524}|ProjetoAgenda\\ProjetoAgenda.csproj|solutionrelative:projetoagenda\\projetoagenda.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,8 +26,47 @@
       "DocumentGroups": [
         {
           "DockedWidth": 276,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CadastrarContato.cshtml",
+              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\CadastrarContato.cshtml",
+              "RelativeDocumentMoniker": "ProjetoAgenda\\Views\\Usuario\\CadastrarContato.cshtml",
+              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\CadastrarContato.cshtml",
+              "RelativeToolTip": "ProjetoAgenda\\Views\\Usuario\\CadastrarContato.cshtml",
+              "ViewState": "AgIAAIQAAAAAAAAAAAAAAJsAAABdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T18:07:58.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ApagarContato.cshtml",
+              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\ApagarContato.cshtml",
+              "RelativeDocumentMoniker": "ProjetoAgenda\\Views\\Usuario\\ApagarContato.cshtml",
+              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\ApagarContato.cshtml",
+              "RelativeToolTip": "ProjetoAgenda\\Views\\Usuario\\ApagarContato.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T18:07:55.735Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProjetoAgenda\\Views\\Usuario\\Index.cshtml",
+              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\Index.cshtml",
+              "RelativeToolTip": "ProjetoAgenda\\Views\\Usuario\\Index.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACIAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-14T12:37:25.072Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -72,163 +75,10 @@
               "RelativeDocumentMoniker": "ProjetoAgenda\\Controllers\\UsuarioController.cs",
               "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Controllers\\UsuarioController.cs",
               "RelativeToolTip": "ProjetoAgenda\\Controllers\\UsuarioController.cs",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAkwHUAAAAzAAAAAAAAAA==",
+              "ViewState": "AgIAADIAAAAAAAAAAAAiwEsAAAA8AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-11T18:22:26.652Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CadastrarContato.cshtml",
-              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\CadastrarContato.cshtml",
-              "RelativeDocumentMoniker": "ProjetoAgenda\\Views\\Usuario\\CadastrarContato.cshtml",
-              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\CadastrarContato.cshtml",
-              "RelativeToolTip": "ProjetoAgenda\\Views\\Usuario\\CadastrarContato.cshtml",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAACoAAABQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-08T14:53:37.864Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "EditarContato.cshtml",
-              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\EditarContato.cshtml",
-              "RelativeDocumentMoniker": "ProjetoAgenda\\Views\\Usuario\\EditarContato.cshtml",
-              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\EditarContato.cshtml",
-              "RelativeToolTip": "ProjetoAgenda\\Views\\Usuario\\EditarContato.cshtml",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAowKUAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-11T19:47:06.6Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CadastroCompletoViewModel.cs",
-              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\ViewModel\\CadastroCompletoViewModel.cs",
-              "RelativeDocumentMoniker": "ProjetoAgenda\\ViewModel\\CadastroCompletoViewModel.cs",
-              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\ViewModel\\CadastroCompletoViewModel.cs",
-              "RelativeToolTip": "ProjetoAgenda\\ViewModel\\CadastroCompletoViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T19:05:43.481Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Models\\Usuario.cs",
-              "RelativeDocumentMoniker": "ProjetoAgenda\\Models\\Usuario.cs",
-              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Models\\Usuario.cs",
-              "RelativeToolTip": "ProjetoAgenda\\Models\\Usuario.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T04:09:03.378Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "DocumentoIdentificacao.cs",
-              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Models\\DocumentoIdentificacao.cs",
-              "RelativeDocumentMoniker": "ProjetoAgenda\\Models\\DocumentoIdentificacao.cs",
-              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Models\\DocumentoIdentificacao.cs",
-              "RelativeToolTip": "ProjetoAgenda\\Models\\DocumentoIdentificacao.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T04:09:41.568Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Endereco.cs",
-              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Models\\Endereco.cs",
-              "RelativeDocumentMoniker": "ProjetoAgenda\\Models\\Endereco.cs",
-              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Models\\Endereco.cs",
-              "RelativeToolTip": "ProjetoAgenda\\Models\\Endereco.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-12T04:09:19.8Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "ApagarContato.cshtml",
-              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\ApagarContato.cshtml",
-              "RelativeDocumentMoniker": "ProjetoAgenda\\Views\\Usuario\\ApagarContato.cshtml",
-              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\ApagarContato.cshtml",
-              "RelativeToolTip": "ProjetoAgenda\\Views\\Usuario\\ApagarContato.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-10T12:12:33.779Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\Index.cshtml",
-              "RelativeDocumentMoniker": "ProjetoAgenda\\Views\\Usuario\\Index.cshtml",
-              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Usuario\\Index.cshtml",
-              "RelativeToolTip": "ProjetoAgenda\\Views\\Usuario\\Index.cshtml",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAADEAAAAeAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-10T20:56:46.58Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "ProjetoAgenda\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "ProjetoAgenda\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA4wBsAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-08T18:13:46.907Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Home\\Index.cshtml",
-              "RelativeDocumentMoniker": "ProjetoAgenda\\Views\\Home\\Index.cshtml",
-              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\Views\\Home\\Index.cshtml",
-              "RelativeToolTip": "ProjetoAgenda\\Views\\Home\\Index.cshtml",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-04-10T20:40:03.533Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\appsettings.json",
-              "RelativeDocumentMoniker": "ProjetoAgenda\\appsettings.json",
-              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\appsettings.json",
-              "RelativeToolTip": "ProjetoAgenda\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-04-08T18:27:39.211Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ProjetoAgenda",
-              "DocumentMoniker": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\ProjetoAgenda.csproj",
-              "RelativeDocumentMoniker": "ProjetoAgenda\\ProjetoAgenda.csproj",
-              "ToolTip": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\ProjetoAgenda.csproj",
-              "RelativeToolTip": "ProjetoAgenda\\ProjetoAgenda.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-04-09T17:57:47.797Z"
             }
           ]
         }

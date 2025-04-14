@@ -13,14 +13,29 @@ namespace ProjetoAgenda.Controllers
         {
             _context = context;
         }
+        [HttpGet]
+        public IActionResult ApagarContato(int id)
+        {
+            var usuario = _context.Usuarios
+                .Include(u => u.Endereco)
+                .Include(u => u.Telefones)
+                .Include(u => u.DocumentoIdentificacao)
+                .FirstOrDefault(u => u.UsuarioId == id);
+
+            if (usuario == null)
+                return NotFound();
+
+            return View(usuario);
+        }
 
         public IActionResult Index()
         {
-            var usuarios = _context.Usuarios
+            var usuariosAtivos = _context.Usuarios
                 .Include(u => u.Telefones)
+                .Where(u => u.Endereco.Situacao == "Ativo")
                 .ToList();
 
-            return View(usuarios);
+            return View(usuariosAtivos);
         }
 
         public IActionResult CadastrarContato()
@@ -58,7 +73,7 @@ namespace ProjetoAgenda.Controllers
             {
                 _context.Usuarios.Add(usuario);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Usuario");
             }
             else
             {
@@ -73,17 +88,32 @@ namespace ProjetoAgenda.Controllers
             }
         }
 
-        public IActionResult ApagarContato()
-        {
-            return View();
-        }
-
-        //fazer esse de baixo após fazer o editar ok.
-        //public IActionResult TornarInativo(int id)
+        //public IActionResult ApagarContato()
         //{
-
-        //    return View();
+        //    var usuarios = _context.Usuarios.ToList();
+        //    return View(usuarios);
         //}
+
+        [HttpGet]
+        public IActionResult ConfirmarInativação(int id)
+        {
+            var usuario = _context.Usuarios
+                .Include(u => u.Endereco)
+                .FirstOrDefault(u => u.UsuarioId == id);
+
+
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+
+            usuario.Endereco.Situacao = "Inativo";
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
 
         [HttpGet]
         public IActionResult EditarContato(int id)
@@ -102,9 +132,9 @@ namespace ProjetoAgenda.Controllers
             var viewModel = new CadastroCompletoViewModel
             {
                 Usuario = usuario,
-                Endereco = usuario.Endereco,  // Atribuindo os dados de Endereco
-                Telefone = usuario.Telefones, // Atribuindo os dados de Telefone
-                DocumentoIdentificacao = usuario.DocumentoIdentificacao // Atribuindo os dados de DocumentoIdentificacao
+                Endereco = usuario.Endereco,
+                Telefone = usuario.Telefones,
+                DocumentoIdentificacao = usuario.DocumentoIdentificacao
             };
 
             return View(viewModel);
@@ -136,12 +166,10 @@ namespace ProjetoAgenda.Controllers
                 return NotFound();
             }
 
-            // Atualizar os dados básicos do usuário
             usuarioBanco.Nome = viewModel.Usuario.Nome;
             usuarioBanco.Email = viewModel.Usuario.Email;
             usuarioBanco.DataNascimento = viewModel.Usuario.DataNascimento;
 
-            // Atualizar endereço, telefone e documento
             usuarioBanco.Endereco = viewModel.Endereco;
             usuarioBanco.DocumentoIdentificacao = viewModel.DocumentoIdentificacao;
             usuarioBanco.Telefones = viewModel.Telefone;
@@ -156,7 +184,7 @@ namespace ProjetoAgenda.Controllers
             var usuario = _context.Usuarios
                 .Include(u => u.Endereco)
                 .Include(u => u.DocumentoIdentificacao)
-                .Include(u => u.Telefones) // <-- Certifique-se de incluir isso
+                .Include(u => u.Telefones)
                 .FirstOrDefault(u => u.UsuarioId == id);
 
             if (usuario == null)
