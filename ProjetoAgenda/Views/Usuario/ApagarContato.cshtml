@@ -8,22 +8,16 @@
         </div>
         <div class="card-body text-center p-4">
             <p class="fs-5 mb-4">
-                Você tem certeza que deseja apagar este contato?
+                Você quer mesmo apagar esse contato ?
             </p>
 
-            <h2>Deseja realmente apagar o contato abaixo?</h2>
 
             <p><strong>Nome:</strong> @Model.Nome</p>
             <p><strong>Email:</strong> @Model.Email</p>
             <p><strong>Data de Nascimento:</strong> @Model.DataNascimento.ToShortDateString()</p>
 
-            <!-- Mostrar endereço, telefone, etc., se quiser -->
-
-            <a class="btn btn-danger"
-               asp-controller="Usuario"
-               asp-action="ConfirmarInativação"
-               asp-route-id="@Model.UsuarioId">
-                Apagar
+            <a class="btn btn-danger" asp-controller="Usuario" asp-action="ConfirmarInativacao" asp-route-id="@Model.UsuarioId">
+                positivo
             </a>
             <form asp-action="ApagarContato" method="post">
           

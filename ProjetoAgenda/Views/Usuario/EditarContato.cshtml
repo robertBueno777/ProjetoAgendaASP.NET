@@ -62,8 +62,8 @@
                     <input type="hidden" asp-for="Usuario.Endereco.EnderecoId" />
 
                     <div class="mb-3">
-                        <label asp-for="Usuario.Endereco.Logradouro" class="form-label"></label>
-                        <select asp-for="Usuario.Endereco.Logradouro" class="form-select">
+                        <label asp-for="Endereco.Logradouro" class="form-label"></label>
+                        <select asp-for="Endereco.Logradouro" class="form-select">
                             <option value="">Selecione o tipo de logradouro</option>
                             <option value="rua">Rua</option>
                             <option value="avenida">Avenida</option>
@@ -85,28 +85,28 @@
                     </div>
 
                     <div class="mb-3">
-                        <label asp-for="Usuario.Endereco.NumeroEndereco" class="form-label"></label>
-                        <input asp-for="Usuario.Endereco.NumeroEndereco" class="form-control" />
+                        <label asp-for="Endereco.NumeroEndereco" class="form-label"></label>
+                        <input asp-for="Endereco.NumeroEndereco" class="form-control" />
                     </div>
 
                     <div class="mb-3">
-                        <label asp-for="Usuario.Endereco.Cep" class="form-label"></label>
-                        <input asp-for="Usuario.Endereco.Cep" class="form-control" />
+                        <label asp-for="Endereco.Cep" class="form-label"></label>
+                        <input asp-for="Endereco.Cep" class="form-control" />
                     </div>
 
                     <div class="mb-3">
-                        <label asp-for="Usuario.Endereco.Bairro" class="form-label"></label>
-                        <input asp-for="Usuario.Endereco.Bairro" class="form-control" />
+                        <label asp-for="Endereco.Bairro" class="form-label"></label>
+                        <input asp-for="Endereco.Bairro" class="form-control" />
                     </div>
 
                     <div class="mb-3">
-                        <label asp-for="Usuario.Endereco.Cidade" class="form-label"></label>
-                        <input asp-for="Usuario.Endereco.Cidade" class="form-control" />
+                        <label asp-for="Endereco.Cidade" class="form-label"></label>
+                        <input asp-for="Endereco.Cidade" class="form-control" />
                     </div>
 
                     <div class="mb-3">
-                        <label asp-for="Usuario.Endereco.Estado" class="form-label"></label>
-                        <select asp-for="Usuario.Endereco.Estado" class="form-select">
+                        <label asp-for="Endereco.Estado" class="form-label"></label>
+                        <select asp-for="Endereco.Estado" class="form-select">
                             <option value="">Selecione o estado</option>
                             <option value="AC">Acre</option>
                             <option value="AL">Alagoas</option>
@@ -139,19 +139,19 @@
                     </div>
 
                     <div class="mb-3">
-                        <label asp-for="Usuario.Endereco.Complemento" class="form-label"></label>
-                        <input asp-for="Usuario.Endereco.Complemento" class="form-control" />
+                        <label asp-for="Endereco.Complemento" class="form-label"></label>
+                        <input asp-for="Endereco.Complemento" class="form-control" />
                     </div>
 
                     <!-- 🔽 CAMPO ADICIONADO: Situação -->
                     <div class="mb-3">
-                        <label asp-for="Usuario.Endereco.Situacao" class="form-label">Situação</label>
-                        <select asp-for="Usuario.Endereco.Situacao" class="form-select">
+                        <label asp-for="Endereco.Situacao" class="form-label">Situação</label>
+                        <select asp-for="Endereco.Situacao" class="form-select">
                             <option value="">Selecione</option>
                             <option value="Ativo">Ativo</option>
                             <option value="Inativo">Inativo</option>
                         </select>
-                        <span asp-validation-for="Usuario.Endereco.Situacao" class="text-danger"></span>
+                        <span asp-validation-for="Endereco.Situacao" class="text-danger"></span>
                     </div>
                     <!-- 🔼 FIM DO CAMPO ADICIONADO -->
 

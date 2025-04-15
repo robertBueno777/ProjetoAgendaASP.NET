@@ -20,10 +20,10 @@ namespace ProjetoAgenda.Controllers
                 .Include(u => u.Endereco)
                 .Include(u => u.Telefones)
                 .Include(u => u.DocumentoIdentificacao)
-                .FirstOrDefault(u => u.UsuarioId == id);
+                .SingleOrDefault(u => u.UsuarioId == id);
 
             if (usuario == null)
-                return NotFound();
+                return NoContent();
 
             return View(usuario);
         }
@@ -31,12 +31,53 @@ namespace ProjetoAgenda.Controllers
         public IActionResult Index()
         {
             var usuariosAtivos = _context.Usuarios
-                .Include(u => u.Telefones)
+                .Include(u => u.Telefones.Where(x => x.Situacao.Equals("Ativo")))
+                //.Include(u => u.Telefones)
                 .Where(u => u.Endereco.Situacao == "Ativo")
                 .ToList();
 
+            //foreach (var u in usuariosAtivos)
+            //    u.Telefones = u.Telefones.Where(x => x.Situacao.Equals("Ativo")).ToList();
+
             return View(usuariosAtivos);
         }
+        [HttpGet]
+        public IActionResult AdicionarCelular(int id)
+        {
+            var usuario = _context.Usuarios
+               .Include(u => u.Endereco)
+               .Include(u => u.Telefones)
+               .FirstOrDefault(u => u.UsuarioId == id);
+
+
+            if (usuario == null)
+                return NotFound();
+
+            return View(usuario);
+        }
+        [HttpPost]
+        public IActionResult AdicionarContato(int id)
+        {
+
+            var usuario = _context.Usuarios
+               .Include(u => u.Endereco)
+               .Include(u => u.Telefones)
+               .Include(u => u.DocumentoIdentificacao)
+               .FirstOrDefault(u => u.UsuarioId == id);
+
+            if (usuario == null)
+                return NotFound();
+
+            //usuario.
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+
+
+            return View(usuario);
+        }
+
 
         public IActionResult CadastrarContato()
         {
@@ -95,7 +136,7 @@ namespace ProjetoAgenda.Controllers
         //}
 
         [HttpGet]
-        public IActionResult ConfirmarInativação(int id)
+        public IActionResult ConfirmarInativacao(int id)
         {
             var usuario = _context.Usuarios
                 .Include(u => u.Endereco)
@@ -113,6 +154,30 @@ namespace ProjetoAgenda.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        public IActionResult VisualizarContato(int id)
+        {
+            var usuario = _context.Usuarios
+                .Include(u => u.Endereco)
+                .Include(u => u.DocumentoIdentificacao)
+                .Include(u => u.Telefones)
+                .FirstOrDefault(u => u.UsuarioId == id);
+
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+
+            var viewModel = new CadastroCompletoViewModel
+            {
+                Usuario = usuario,
+                Endereco = usuario.Endereco,
+                DocumentoIdentificacao = usuario.DocumentoIdentificacao,
+                Telefone = usuario.Telefones
+            };
+
+            return View(viewModel);
         }
 
         [HttpGet]
@@ -171,36 +236,14 @@ namespace ProjetoAgenda.Controllers
             usuarioBanco.DataNascimento = viewModel.Usuario.DataNascimento;
 
             usuarioBanco.Endereco = viewModel.Endereco;
-            usuarioBanco.DocumentoIdentificacao = viewModel.DocumentoIdentificacao;
-            usuarioBanco.Telefones = viewModel.Telefone;
+            //usuarioBanco.DocumentoIdentificacao = viewModel.DocumentoIdentificacao;
+            //usuarioBanco.Telefones = viewModel.Telefone;
 
             _context.SaveChanges();
 
             return RedirectToAction("Index");
         }
 
-        public IActionResult VisualizarContato(int id)
-        {
-            var usuario = _context.Usuarios
-                .Include(u => u.Endereco)
-                .Include(u => u.DocumentoIdentificacao)
-                .Include(u => u.Telefones)
-                .FirstOrDefault(u => u.UsuarioId == id);
-
-            if (usuario == null)
-            {
-                return NotFound();
-            }
-
-            var viewModel = new CadastroCompletoViewModel
-            {
-                Usuario = usuario,
-                Endereco = usuario.Endereco,
-                DocumentoIdentificacao = usuario.DocumentoIdentificacao,
-                Telefone = usuario.Telefones
-            };
-
-            return View(viewModel);
-        }
+ 
     }
 }
