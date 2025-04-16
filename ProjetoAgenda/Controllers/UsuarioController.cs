@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using ProjetoAgenda.ViewModel;
 using ProjetoAgenda.Models;
+using System.Drawing.Printing;
 
 namespace ProjetoAgenda.Controllers
 {
@@ -45,37 +46,58 @@ namespace ProjetoAgenda.Controllers
         public IActionResult AdicionarCelular(int id)
         {
             var usuario = _context.Usuarios
-               .Include(u => u.Endereco)
-               .Include(u => u.Telefones)
-               .FirstOrDefault(u => u.UsuarioId == id);
-
+                .Include(u => u.Endereco)
+                .Include(u => u.DocumentoIdentificacao)
+                .Include(u => u.Telefones)
+                .FirstOrDefault(u => u.UsuarioId == id);
 
             if (usuario == null)
                 return NotFound();
 
-            return View(usuario);
+            var viewModel = new CadastroCompletoViewModel
+            {
+                Usuario = usuario,
+                Endereco = usuario.Endereco,
+                DocumentoIdentificacao = usuario.DocumentoIdentificacao,
+                Telefone = usuario.Telefones
+            };
+
+            return View("AdicionarCelular", viewModel);
         }
+
         [HttpPost]
-        public IActionResult AdicionarContato(int id)
+        public IActionResult AdicionarContato(CadastroCompletoViewModel model)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("AdicionarCelular", model);
+            }
 
             var usuario = _context.Usuarios
-               .Include(u => u.Endereco)
-               .Include(u => u.Telefones)
-               .Include(u => u.DocumentoIdentificacao)
-               .FirstOrDefault(u => u.UsuarioId == id);
+                .Include(u => u.Telefones)
+                .FirstOrDefault(u => u.UsuarioId == model.Usuario.UsuarioId);
 
             if (usuario == null)
+            {
                 return NotFound();
+            }
 
-            //usuario.
+            foreach (var tel in usuario.Telefones)
+            {
+                tel.Situacao = "Inativa";
+            }
+
+            var novoTel = model.Telefone.FirstOrDefault();
+            if (novoTel != null)
+            {
+                novoTel.Situacao = "Ativa";
+                novoTel.UsuarioId = usuario.UsuarioId;
+                _context.Telefones.Add(novoTel);
+            }
 
             _context.SaveChanges();
 
             return RedirectToAction("Index");
-
-
-            return View(usuario);
         }
 
 
@@ -244,6 +266,6 @@ namespace ProjetoAgenda.Controllers
             return RedirectToAction("Index");
         }
 
- 
+
     }
 }

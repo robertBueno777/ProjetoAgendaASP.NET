@@ -1,26 +1,44 @@
-﻿@model ProjetoAgenda.Models.Usuario
+﻿@* @model List<ProjetoAgenda.Models.Usuario>;
+ *@
+@model ProjetoAgenda.ViewModel.CadastroCompletoViewModel;
+
+
 
 
 <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-<div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
-    <div class="card shadow-lg border-0 rounded-4" style="width: 600px;top: -150px;">
-        <div class="card-header bg-primary text-white text-center fs-4 fw-bold rounded-top-4">
-            Adicionar celular
-        </div>
-        <div class="card-body text-center p-4">
-         @*    <p class="fs-5 mb-4">
-                Você quer mesmo apagar o contato ?
-            </p> *@
-            <div class="mb-3">
-                <label for="exampleFormControlInput1" class="form-label">digite o número telefone.</label>
-                <input type="tel" class="form-control" id="exampleFormControlInput1" placeholder="(00)00000-0000">
+    <div class="container d-flex justify-content-center align-items-center" style="height: 100vh;">
+        <div class="card shadow-lg border-0 rounded-4" style="width: 600px;top: -150px;">
+            <div class="card-header bg-primary text-white text-center fs-4 fw-bold rounded-top-4">
+                Adicionar celular
             </div>
-            <a asp-controller="Usuario" asp-action="AdicionarNovoContato" asp-route-id="@Model.UsuarioId" button type="button" class="btn btn-primary btn-lg">
-                Salvar
-            </a>
+            <div class="card-body text-center p-4">
 
-            <a asp-controller="Usuario" asp-action="Index" class="btn btn-secondary btn-lg">Deixar quieto</a>
-            @*<button type="button" class="btn btn-secondary btn-lg">Deixar quieto</button>*@
+                <form asp-controller="Usuario" asp-action="AdicionarContato" method="post">
+                    <div class="mb-3">
+                        @foreach (var num in Model.Telefone)
+                        {
+
+
+                            <label asp-for="@num.NumeroTelefone" asp-route-id="@num.UsuarioId" class="form-label">Telefone</label>
+                            <input asp-for="@num.NumeroTelefone" class="form-control" placeholder="(00) 00000-0000" />
+                        }
+                        @*                    <label asp-for=""  class="form-label">digite o novo número.</label>
+                        <input type="tel" class="form-control" id="" placeholder="(00)00000-0000"> *@
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-lg">Adicionar</button>
+                    <a asp-controller="Usuario" asp-action="Index" class="btn btn-secondary btn-lg">Deixar quieto</a>
+                </form>
+
+                @*<button type="button" class="btn btn-secondary btn-lg">Deixar quieto</button>*@
+            </div>
+
+            <p>
+                
+     @*            @foreach (var num in Model.Telefones)
+                {
+                    @num.NumeroTelefone
+                } *@
+            </p>
         </div>
     </div>
-</div>
