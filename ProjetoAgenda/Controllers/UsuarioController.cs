@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using ProjetoAgenda.ViewModel;
 using ProjetoAgenda.Models;
 using System.Drawing.Printing;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ProjetoAgenda.Controllers
 {
@@ -68,11 +69,17 @@ namespace ProjetoAgenda.Controllers
         [HttpPost]
         public IActionResult AdicionarContato(CadastroCompletoViewModel model)
         {
-            if (!ModelState.IsValid)
+            foreach (var estado in ModelState)
             {
-                return View("AdicionarCelular", model);
-            }
+                foreach (var erro in estado.Value.Errors)
+                {
+                    Console.WriteLine($"Campo com erro: {estado.Key} - Erro: {erro.ErrorMessage}");
+                    return View("AdicionarCelular", model);
+            
 
+                }
+            }
+          
             var usuario = _context.Usuarios
                 .Include(u => u.Telefones)
                 .FirstOrDefault(u => u.UsuarioId == model.Usuario.UsuarioId);
