@@ -33,7 +33,9 @@ namespace ProjetoAgenda.Controllers
         public IActionResult Index()
         {
             var usuariosAtivos = _context.Usuarios
-                .Include(u => u.Telefones.Where(x => x.Situacao.Equals("Ativo")))
+                //.Include(u => u.Telefones.Where(x => x.Situacao.Equals("Ativo")))
+
+                .Include(u => u.Telefones)
                 //.Include(u => u.Telefones)
                 .Where(u => u.Endereco.Situacao == "Ativo")
                 .ToList();
@@ -47,8 +49,6 @@ namespace ProjetoAgenda.Controllers
         public IActionResult AdicionarCelular(int id)
         {
             var usuario = _context.Usuarios
-                .Include(u => u.Endereco)
-                .Include(u => u.DocumentoIdentificacao)
                 .Include(u => u.Telefones)
                 .FirstOrDefault(u => u.UsuarioId == id);
 
@@ -58,11 +58,10 @@ namespace ProjetoAgenda.Controllers
             var viewModel = new CadastroCompletoViewModel
             {
                 Usuario = usuario,
-                Endereco = usuario.Endereco,
-                DocumentoIdentificacao = usuario.DocumentoIdentificacao,
-                Telefone = usuario.Telefones
+                Telefone = new List<Telefone> { new Telefone() }
             };
 
+            ViewBag.TelefonesAntigos = usuario.Telefones;
             return View("AdicionarCelular", viewModel);
         }
 
@@ -74,12 +73,12 @@ namespace ProjetoAgenda.Controllers
                 foreach (var erro in estado.Value.Errors)
                 {
                     Console.WriteLine($"Campo com erro: {estado.Key} - Erro: {erro.ErrorMessage}");
-                    return View("AdicionarCelular", model);
-            
-
+                    ViewBag.TelefonesAntigos = _context.Telefones
+                              .Where(t => t.UsuarioId == model.Usuario.UsuarioId)
+                              .ToList();
                 }
             }
-          
+
             var usuario = _context.Usuarios
                 .Include(u => u.Telefones)
                 .FirstOrDefault(u => u.UsuarioId == model.Usuario.UsuarioId);

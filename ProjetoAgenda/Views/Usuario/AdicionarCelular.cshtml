@@ -13,171 +13,40 @@
 
                 <form asp-controller="Usuario" asp-action="AdicionarContato" method="post">
                     <div class="mb-3">
+                        <label class="form-label"><strong>Nome</strong></label>
+                        <input class="form-control" value="@Model.Usuario.Nome" disabled />
+                        <input type="hidden" name="Usuario.UsuarioId" value="@Model.Usuario.UsuarioId" />
 
-                        @foreach (var num in Model.Telefone)
+                        <label asp-for="Telefone[0].NumeroTelefone" class="form-label">Novo Telefone</label>
+                        <input asp-for="Telefone[0].NumeroTelefone" class="form-control" placeholder="(00) 00000-0000"/>
+                        <span asp-validation-for="Telefone[0].NumeroTelefone" class="text-danger"></span>
+
+                        <hr />
+                        <p><strong>Números j´a cadastrados: </strong></p>
+                        @foreach (var num in (List<Telefone>)ViewBag.TelefonesAntigos)
                         {
-                                <p class="text-center fs-5 fw-bold">Dados Pessoais</p>
+                            <p style="background-color: lightgrey; border-radius: 3px;">
+                                @num.NumeroTelefone (@num.Situacao)
+                            </p>                            
+                        }   
 
-                                <div class="mb-3">
-                                    <label asp-for="@num.Usuario.Nome" class="form-label"></label>
-                                    <input asp-for="@num.Usuario.Nome" class="form-control" />
-                                    <span asp-validation-for="@num.Usuario.Nome" class="text-danger"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label asp-for="@num.Usuario.Email" class="form-label"></label>
-                                    <input asp-for="@num.Usuario.Email" class="form-control" />
-                                    <span asp-validation-for="@num.Usuario.Email" class="text-danger"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label asp-for="@num.Usuario.DataNascimento" class="form-label"></label>
-                                    <input asp-for="@num.Usuario.DataNascimento" type="date" class="form-control" />
-                                    <span asp-validation-for="@num.Usuario.DataNascimento" class="text-danger"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                <label asp-for="@num.Usuario.DocumentoIdentificacao.TipoDocumento" class="form-label"></label>
-                                <select asp-for="@num.Usuario.DocumentoIdentificacao.TipoDocumento" class="form-select">
-                                        <option selected disabled>Selecione o tipo de documento</option>
-                                        <option value="cpf">CPF</option>
-                                        <option value="rg">RG</option>
-                                        <option value="cnh">CNH</option>
-                                        <option value="passaporte">Passaporte</option>
-                                        <option value="titulo_eleitor">Título de Eleitor</option>
-                                        <option value="cert_reservista">Certificado de Reservista</option>
-                                        <option value="ctps">CTPS</option>
-                                        <option value="carteira_profissional">Carteira Profissional</option>
-                                        <option value="rne">RNE</option>
-                                        <option value="cert_nascimento">Certidão de Nascimento</option>
-                                        <option value="cert_casamento">Certidão de Casamento</option>
-                                    </select>
-                                    <span asp-validation-for="DocumentoIdentificacao.TipoDocumento" class="text-danger"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label asp-for="@num.Usuario.DocumentoIdentificacao.NumeroDocumento" class="form-label"></label>
-                                    <input asp-for="@num.Usuario.DocumentoIdentificacao.NumeroDocumento" class="form-control" />
-                                    <span asp-validation-for="@num.Usuario.DocumentoIdentificacao.NumeroDocumento" class="text-danger"></span>
-                                </div>
-
-                                <p class="text-center fs-5 fw-bold">Endereço</p>
-
-                                <div class="mb-3">
-                                    <label asp-for="@num.Usuario.Endereco.Logradouro" class="form-label"></label>
-                                    <select asp-for="@num.Usuario.Endereco.Logradouro" class="form-select">
-                                        <option selected disabled>Selecione o tipo de logradouro</option>
-                                        <option value="rua">Rua</option>
-                                        <option value="avenida">Avenida</option>
-                                        <option value="travessa">Travessa</option>
-                                        <option value="alameda">Alameda</option>
-                                        <option value="estrada">Estrada</option>
-                                        <option value="rodovia">Rodovia</option>
-                                        <option value="vielas">Viela</option>
-                                        <option value="praça">Praça</option>
-                                        <option value="largo">Largo</option>
-                                        <option value="quadra">Quadra</option>
-                                        <option value="conjunto">Conjunto</option>
-                                        <option value="bairro">Bairro</option>
-                                        <option value="sitio">Sítio</option>
-                                        <option value="fazenda">Fazenda</option>
-                                        <option value="chacara">Chácara</option>
-                                        <option value="outro">Outro</option>
-                                    </select>
-                                    <span asp-validation-for="@num.Usuario.Endereco.Logradouro" class="text-danger"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label asp-for="@num.Usuario.Endereco.NumeroEndereco" class="form-label"></label>
-                                    <input asp-for="@num.Usuario.Endereco.NumeroEndereco" class="form-control" />
-                                    <span asp-validation-for="@num.Usuario.Endereco.NumeroEndereco" class="text-danger"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label asp-for="@num.Usuario.Endereco.Cep" class="form-label"></label>
-                                    <input asp-for="@num.Usuario.Endereco.Cep" class="form-control" />
-                                    <span asp-validation-for="@num.Usuario.Endereco.Cep" class="text-danger"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label asp-for="@num.Usuario.Endereco.Bairro" class="form-label"></label>
-                                    <input asp-for="@num.Usuario.Endereco.Bairro" class="form-control" />
-                                    <span asp-validation-for="@num.Usuario.Endereco.Bairro" class="text-danger"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                    <label asp-for="@num.Usuario.Endereco.Cidade" class="form-label"></label>
-                                    <input asp-for="@num.Usuario.Endereco.Cidade" class="form-control" />
-                                    <span asp-validation-for="@num.Usuario.Endereco.Cidade" class="text-danger"></span>
-                                </div>
-
-                                <div class="mb-3">
-                                <label asp-for="@num.Usuario.Endereco.Estado" class="form-label"></label>
-                                <select asp-for="@num.Usuario.Endereco.Estado" class="form-select">
-                                        <option selected disabled>Selecione o estado</option>
-                                        <option value="AC">Acre (AC)</option>
-                                        <option value="AL">Alagoas (AL)</option>
-                                        <option value="AP">Amapá (AP)</option>
-                                        <option value="AM">Amazonas (AM)</option>
-                                        <option value="BA">Bahia (BA)</option>
-                                        <option value="CE">Ceará (CE)</option>
-                                        <option value="DF">Distrito Federal (DF)</option>
-                                        <option value="ES">Espírito Santo (ES)</option>
-                                        <option value="GO">Goiás (GO)</option>
-                                        <option value="MA">Maranhão (MA)</option>
-                                        <option value="MT">Mato Grosso (MT)</option>
-                                        <option value="MS">Mato Grosso do Sul (MS)</option>
-                                        <option value="MG">Minas Gerais (MG)</option>
-                                        <option value="PA">Pará (PA)</option>
-                                        <option value="PB">Paraíba (PB)</option>
-                                        <option value="PR">Paraná (PR)</option>
-                                        <option value="PE">Pernambuco (PE)</option>
-                                        <option value="PI">Piauí (PI)</option>
-                                        <option value="RJ">Rio de Janeiro (RJ)</option>
-                                        <option value="RN">Rio Grande do Norte (RN)</option>
-                                        <option value="RS">Rio Grande do Sul (RS)</option>
-                                        <option value="RO">Rondônia (RO)</option>
-                                        <option value="RR">Roraima (RR)</option>
-                                        <option value="SC">Santa Catarina (SC)</option>
-                                        <option value="SP">São Paulo (SP)</option>
-                                        <option value="SE">Sergipe (SE)</option>
-                                        <option value="TO">Tocantins (TO)</option>
-                                    </select>
-                                <span asp-validation-for="@num.Usuario.Endereco.Estado" class="text-danger"></span>
-                                </div>
-                                <input type="hidden" name="Endereco.Situacao" value="Ativo" />
-                                <input type="hidden" name="Telefone[0].Situacao" value="Ativo" />
-
-
-                                <div class="mb-3">
-                                <label asp-for="@num.Usuario.Endereco.Complemento" class="form-label"></label>
-                                <input asp-for="@num.Usuario.Endereco.Complemento" class="form-control" />
-                                    <span asp-validation-for="Endereco.Complemento" class="text-danger"></span>
-                                </div>
-
-                               
-
-                            //a parte de cima estamos dando o valor para o qq falta no novo contato
-
-
-
-                            <label asp-for="@num.NumeroTelefone" asp-route-id="@num.UsuarioId" class="form-label">Telefone</label>
-                            <input asp-for="@num.NumeroTelefone" class="form-control" placeholder="(00) 00000-0000" />
-                        }
+                        
                         @*                    <label asp-for=""  class="form-label">digite o novo número.</label>
                         <input type="tel" class="form-control" id="" placeholder="(00)00000-0000"> *@
                     </div>
 
+
                     <button type="submit" class="btn btn-primary btn-lg">Adicionar</button>
-                    <a asp-controller="Usuario" asp-action="Index" class="btn btn-secondary btn-lg">Deixar quieto</a>
+
+                    <a asp-controller="Usuario" asp-action="Index" class="btn btn-secondary btn-lg">Cancelar</a>
                 </form>
 
                 @*<button type="button" class="btn btn-secondary btn-lg">Deixar quieto</button>*@
             </div>
 
             <p>
-                
-     @*            @foreach (var num in Model.Telefones)
+
+                @*            @foreach (var num in Model.Telefones)
                 {
                     @num.NumeroTelefone
                 } *@
