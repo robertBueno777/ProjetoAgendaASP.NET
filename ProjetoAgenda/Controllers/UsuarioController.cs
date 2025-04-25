@@ -88,15 +88,15 @@ namespace ProjetoAgenda.Controllers
                 return NotFound();
             }
 
-            foreach (var tel in usuario.Telefones)
-            {
-                tel.Situacao = "Inativa";
-            }
+            //foreach (var tel in usuario.Telefones)
+            //{
+            //    tel.Situacao = "Inativa";
+            //}
 
             var novoTel = model.Telefone.FirstOrDefault();
             if (novoTel != null)
             {
-                novoTel.Situacao = "Ativa";
+                novoTel.Situacao = "Ativo";
                 novoTel.UsuarioId = usuario.UsuarioId;
                 _context.Telefones.Add(novoTel);
             }
@@ -104,6 +104,38 @@ namespace ProjetoAgenda.Controllers
             _context.SaveChanges();
 
             return RedirectToAction("Index");
+        }
+
+        //[HttpGet]
+        //public IActionResult FazerInativo(int id)
+        //{
+        //    var usuario = _context.Usuarios
+        //        .Include(u => u.Telefones)              
+        //        .SingleOrDefault(u => u.UsuarioId == id);
+
+        //    if (usuario == null)
+        //        return NoContent();
+
+        //    return View(usuario);
+        //}
+
+
+
+        [HttpPost]
+        public IActionResult TornarInativo(int id)
+        {
+            var telefone = _context.Telefones.FirstOrDefault(u => u.TelefoneId == id);
+            if (telefone == null)
+            {
+                return NotFound();
+            }
+            telefone.Situacao = "Inativo";
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+
+
         }
 
 
@@ -207,6 +239,10 @@ namespace ProjetoAgenda.Controllers
 
             return View(viewModel);
         }
+
+
+
+
 
         [HttpGet]
         public IActionResult EditarContato(int id)

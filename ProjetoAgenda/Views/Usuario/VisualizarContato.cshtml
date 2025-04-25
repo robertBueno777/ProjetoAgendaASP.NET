@@ -7,11 +7,11 @@
                 <div class="card-body p-5">
                     <h2 class="text-center mb-4" style="font-family: 'Inter', sans-serif; font-weight: 700; color: #343a40;">
                         <div style="text-align:center; font-size: 40px">
-                           <strong> Dados do Contato </strong
-                               <p>
+                            <strong> Dados do Contato </strong
+                            <p>
 
 
-                               </p>
+                            </p>
                         </div>
                     </h2>
                     <dl class="row fs-5">
@@ -24,15 +24,46 @@
                         <dt class="col-sm-4">Data de Nascimento:  </dt>
                         <dd class="col-sm-8">@Model.Usuario.DataNascimento.ToString("dd/MM/yyyy")</dd>
 
- 
+
                         <dt class="col-sm-4">Telefones:</dt>
                         <dd class="col-sm-8">
                             <ul>
-                                @foreach(var telefones in Model.Usuario.Telefones)
-                                {  
-                                    <li>Id do telefone: @telefones.TelefoneId </li>
-                                    <li>telefone: @telefones.NumeroTelefone </li>
-                                    <li>Situacao: @telefones.Situacao </li>
+                                @foreach(var telefones in Model.Usuario.Telefones){
+                                    <div class="card shadow-lg border-0 rounded-4" style="background-color: dimgrey; color:black;">
+                                        <li>Id do telefone: @telefones.TelefoneId </li>
+                                        <li>telefone: @telefones.NumeroTelefone </li>
+                                        <li>Situacao: @telefones.Situacao </li>
+                                        <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="width: 400px; align-items:center;">
+                                            @* <form>
+                                                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                                                  <button type="button" class="btn btn-danger">Apagar Número</button>
+                                                  <button type="submit" class="btn btn-warning">Inativar Número</button>
+                                                  <button type="button" class="btn btn-success">Ativar número</button>
+                                                </div>
+                                            </form> *@
+                                    @*     <tr>
+                                            <td>
+                                                @telefones.NumeroTelefone
+                                            </td>
+                                             <td>
+                                                 @telefones.TelefoneId
+                                             </td>
+                                        </tr> *@
+                                            <form asp-action="TornarInativo" asp-controller="Usuario" method="post">
+                                                <input type="hidden" name="id" value="@telefones.TelefoneId" />
+                                                <button type="submit" class="btn btn-warning">Inativar Número</button>
+                                            </form>
+                                            
+                                            
+                                            <a asp-controller="Usuario" asp-action="Index" class="btn btn-danger">Apagar número</a>
+                                            <a asp-controller="Usuario" asp-action="Index" class="btn btn-success">Ativar número</a>
+
+                                        </div>
+                                    </div>
+                                    <p>
+
+                                    </p>
+
                                 }
 
                             </ul>
