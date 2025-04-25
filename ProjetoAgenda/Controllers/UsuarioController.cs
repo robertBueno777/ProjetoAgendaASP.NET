@@ -45,6 +45,27 @@ namespace ProjetoAgenda.Controllers
 
             return View(usuariosAtivos);
         }
+        [HttpPost]
+        public IActionResult ApagarCelular(int id)
+        {
+            var telefoneRemove = _context.Telefones.FirstOrDefault(u => u.TelefoneId == id);
+            if (telefoneRemove == null)
+            {
+                return NotFound();
+            }
+
+            _context.Telefones.Remove(telefoneRemove);
+        
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+
+
+
+        }
+
+
         [HttpGet]
         public IActionResult AdicionarCelular(int id)
         {
@@ -118,6 +139,25 @@ namespace ProjetoAgenda.Controllers
 
         //    return View(usuario);
         //}
+
+
+        [HttpPost]
+        public IActionResult TornarAtivo(int id)
+        {
+            var telefone = _context.Telefones.FirstOrDefault(u => u.TelefoneId == id);
+            if (telefone == null)
+            {
+                return NotFound();
+            }
+            telefone.Situacao = "Ativo";
+
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+
+
+        }
+
 
 
 

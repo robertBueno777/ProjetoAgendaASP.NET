@@ -49,14 +49,29 @@
                                                  @telefones.TelefoneId
                                              </td>
                                         </tr> *@
-                                            <form asp-action="TornarInativo" asp-controller="Usuario" method="post">
+                                        
+
+                                              <form asp-action="TornarInativo" asp-controller="Usuario" method="post">
                                                 <input type="hidden" name="id" value="@telefones.TelefoneId" />
-                                                <button type="submit" class="btn btn-warning">Inativar Número</button>
+                                                <button type="submit" class="btn btn-warning" style="width:80px;height: 50px;font-size:13px;">Inativar Número</button>
                                             </form>
                                             
                                             
-                                            <a asp-controller="Usuario" asp-action="Index" class="btn btn-danger">Apagar número</a>
-                                            <a asp-controller="Usuario" asp-action="Index" class="btn btn-success">Ativar número</a>
+                                             <form asp-action="TornarAtivo" asp-controller="Usuario" method="post">
+                                                <input type="hidden" name="id" value="@telefones.TelefoneId" />
+                                                <button type="submit" class="btn btn-success" style="width:80px;height: 50px;font-size:13px;">Ativar número</button>
+                                            </form>
+
+                                            <form asp-action="ApagarCelular" asp-controller="Usuario" method="post">
+                                                <input type="hidden" name="id" value="@telefones.TelefoneId" />
+                                                <button type="submit" class="btn btn-danger"  style="width:80px;height: 50px;font-size:13px;">Apagar Número</button>
+                                            </form>
+
+
+                                   
+                                          
+
+
 
                                         </div>
                                     </div>
@@ -134,5 +149,6 @@
                 </div>
             </div>
         </div>
+
     </div>
 </div>
