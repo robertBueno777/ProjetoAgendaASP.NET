@@ -50,10 +50,26 @@
                                              </td>
                                         </tr> *@
                                         
-
                                               <form asp-action="TornarInativo" asp-controller="Usuario" method="post">
                                                 <input type="hidden" name="id" value="@telefones.TelefoneId" />
-                                                <button type="submit" class="btn btn-warning" style="width:80px;height: 50px;font-size:13px;">Inativar Número</button>
+                                                <button type="button" class="btn btn-warning" style="width:80px;height: 50px;font-size:13px;" data-bs-toggle="modal" data-bs-target="#minhaModal">Inativar Número</button>
+                                            </form>
+                                            
+                                            
+                                             <form asp-action="TornarAtivo" asp-controller="Usuario" method="post">
+                                                <input type="hidden" name="id" value="@telefones.TelefoneId" />
+                                                <button type="button" class="btn btn-success" style="width:80px;height: 50px;font-size:13px;"  data-bs-toggle="modal" data-bs-target="#minhaAtiva">Ativar número</button>
+                                            </form>
+
+                                            <form asp-action="ApagarCelular" asp-controller="Usuario" method="post">
+                                                <input type="hidden" name="id" value="@telefones.TelefoneId" />
+                                                <button type="button" class="btn btn-danger"  style="width:80px;height: 50px;font-size:13px;"  data-bs-toggle="modal" data-bs-target="#minhaApagar">Apagar Número</button>
+                                            </form>
+
+                                        
+                                           @*    <form asp-action="TornarInativo" asp-controller="Usuario" method="post">
+                                                <input type="hidden" name="id" value="@telefones.TelefoneId" />
+                                                <button type="submit" class="btn btn-warning" style="width:80px;height: 50px;font-size:13px;" data-bs-toggle="modal" data-bs-target="#minhaModal">Inativar Número</button>
                                             </form>
                                             
                                             
@@ -65,8 +81,96 @@
                                             <form asp-action="ApagarCelular" asp-controller="Usuario" method="post">
                                                 <input type="hidden" name="id" value="@telefones.TelefoneId" />
                                                 <button type="submit" class="btn btn-danger"  style="width:80px;height: 50px;font-size:13px;">Apagar Número</button>
-                                            </form>
+                                            </form> *@
 
+
+
+                                                @*Essa modal de baixo é a de Inativar número*@
+                                                <div class="modal fade" id="minhaModal" tabindex="-1" aria-labelledby="minhaModalLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+      
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="minhaModalLabel" style="font-size: 15px; text-align: center;" >Ação concluída !</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                                      </div>
+      
+                                                      <div class="modal-body" style="padding: 30px; text-align: center;">
+                                                        <div class="mb-3">
+                                                            <h1 style="font-size: 24px; font-weight: bold; color: #333; margin-bottom: 20px;">
+                                                                O Telefone <span style="color: #007bff;">@telefones.NumeroTelefone</span> foi inativado.
+                                                            </h1>
+                                                        </div>
+                                                    </div>
+
+                                                          <div class="modal-footer" style="display: flex; justify-content: center;">
+                                                            <form asp-action="TornarInativo" asp-controller="Usuario" method="post">
+                                                                <input type="hidden" name="id" value="@telefones.TelefoneId" />
+                                                                <button type="submit" class="btn btn-primary" style="width:80px; height:50px; font-size:13px;">Ok</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                            @*Essa modal de baixo é a de ativar número*@                                         
+                                                <div class="modal fade" id="minhaAtiva" tabindex="-1" aria-labelledby="minhaAtivaLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+      
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="minhaModalLabel" style="font-size: 15px; text-align: center;" >Ação concluída !</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                                      </div>
+      
+                                                      <div class="modal-body" style="padding: 30px; text-align: center;">
+                                                        <div class="mb-3">
+                                                            <h1 style="font-size: 24px; font-weight: bold; color: #333; margin-bottom: 20px;">
+                                                                O Telefone <span style="color: #007bff;">@telefones.NumeroTelefone</span> foi ativado.
+                                                            </h1>
+                                                        </div>
+                                                    </div>
+      
+                                                          <div class="modal-footer" style="display: flex; justify-content: center;">
+                                                            <form asp-action="TornarAtivo" asp-controller="Usuario" method="post">
+                                                                <input type="hidden" name="id" value="@telefones.TelefoneId" />
+                                                                <button type="submit" class="btn btn-primary" style="width:80px; height:50px; font-size:13px;">Ok</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                   
+                                                @*Essa modal de baixo é a de Apagart número*@
+                                                <div class="modal fade" id="minhaApagar" tabindex="-1" aria-labelledby="minhaApagarLabel" aria-hidden="true">
+                                                  <div class="modal-dialog">
+                                                    <div class="modal-content">
+      
+                                                      <div class="modal-header">
+                                                        <h5 class="modal-title" id="minhaModalLabel" style="font-size: 15px; text-align: center;" >Ação concluída !</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                                                      </div>
+      
+                                                      <div class="modal-body" style="padding: 30px; text-align: center;">
+                                                        <div class="mb-3">
+                                                            <h1 style="font-size: 24px; font-weight: bold; color: #333; margin-bottom: 20px;">
+                                                                O Telefone <span style="color: #007bff;">@telefones.NumeroTelefone</span> foi Apagado.
+                                                            </h1>
+                                                        </div>
+                                                    </div>
+
+                                                          <div class="modal-footer" style="display: flex; justify-content: center;">
+                                                            <form asp-action="ApagarCelular" asp-controller="Usuario" method="post">
+                                                                <input type="hidden" name="id" value="@telefones.TelefoneId" />
+                                                                <button type="submit" class="btn btn-primary" style="width:80px; height:50px; font-size:13px;">Ok</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                  </div>
+                                                </div>
+
+                                   
 
                                    
                                           
@@ -89,7 +193,7 @@
                             <p>
 
 
-                               </p>
+                            </p>
                         </div>
                         <dt class="col-sm-4">Endereço Id:</dt>
                         <dd class="col-sm-8">@Model.Usuario.Endereco.EnderecoId</dd>
@@ -123,7 +227,7 @@
                             <p>
 
 
-                               </p>
+                            </p>
                         </div>
 
                         <dt class="col-sm-4">Id do documento:</dt>
