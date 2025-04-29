@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "Qw1p2rhfRrB+VKVxapQmBgvZF99XTDuFMXSPM12xHCw=",
+  "Hash": "8D3lpbKWu5NdlyDmbbnkNRYKX9tdBqUVnx78FYRAvow=",
   "Source": "ProjetoAgenda",
   "BasePath": "_content/ProjetoAgenda",
   "Mode": "Default",
@@ -99,6 +99,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\wwwroot\\images\\Gemini_Generated_Image_lly51klly51klly5.jfif",
+      "SourceId": "ProjetoAgenda",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\wwwroot\\",
+      "BasePath": "_content/ProjetoAgenda",
+      "RelativePath": "images/Gemini_Generated_Image_lly51klly51klly5#[.{fingerprint}]?.jfif",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "kf6dzzj3r8",
+      "Integrity": "MD9dbX1BEZXUfCIRcNtDxyxwV+qWK2fVbq5ujXkYXEs=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Gemini_Generated_Image_lly51klly51klly5.jfif"
     },
     {
       "Identity": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\wwwroot\\js\\site.js",
@@ -1481,6 +1502,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-Jtxf9L+5ITKRc1gIRl4VbUpGkRNfOBXjYTdhJD4facM="
+        }
+      ]
+    },
+    {
+      "Route": "images/Gemini_Generated_Image_lly51klly51klly5.jfif",
+      "AssetFile": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\wwwroot\\images\\Gemini_Generated_Image_lly51klly51klly5.jfif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "452435"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/pjpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MD9dbX1BEZXUfCIRcNtDxyxwV+qWK2fVbq5ujXkYXEs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 14:51:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MD9dbX1BEZXUfCIRcNtDxyxwV+qWK2fVbq5ujXkYXEs="
+        }
+      ]
+    },
+    {
+      "Route": "images/Gemini_Generated_Image_lly51klly51klly5.kf6dzzj3r8.jfif",
+      "AssetFile": "C:\\Users\\rbueno\\Desktop\\aspNet\\ProjetoAgenda\\ProjetoAgenda\\wwwroot\\images\\Gemini_Generated_Image_lly51klly51klly5.jfif",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "452435"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/pjpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MD9dbX1BEZXUfCIRcNtDxyxwV+qWK2fVbq5ujXkYXEs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 28 Apr 2025 14:51:34 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kf6dzzj3r8"
+        },
+        {
+          "Name": "label",
+          "Value": "images/Gemini_Generated_Image_lly51klly51klly5.jfif"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MD9dbX1BEZXUfCIRcNtDxyxwV+qWK2fVbq5ujXkYXEs="
         }
       ]
     },

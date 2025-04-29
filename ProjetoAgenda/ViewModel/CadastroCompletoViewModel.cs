@@ -8,5 +8,12 @@ namespace ProjetoAgenda.ViewModel
         public List <Telefone> Telefone { get; set; }
         public DocumentoIdentificacao DocumentoIdentificacao { get; set; }
 
+        public List<Estado> Ufs { get; set; }
+
+        public List<Cidade> Cidades { get; set; }
+        public int? EstadoSelecionadoId { get; set; }
+        
+
+
     }
 }

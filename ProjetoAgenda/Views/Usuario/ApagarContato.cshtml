@@ -17,9 +17,12 @@
             <p><strong>Data de Nascimento:</strong> @Model.DataNascimento.ToShortDateString()</p>
 
             <a class="btn btn-danger" asp-controller="Usuario" asp-action="ConfirmarInativacao" asp-route-id="@Model.UsuarioId">
-                positivo
+                Apagar
             </a>
             <form asp-action="ApagarContato" method="post">
+                <p>
+
+                </p>
           
                 <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
             </form>

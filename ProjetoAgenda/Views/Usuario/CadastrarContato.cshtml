@@ -1,4 +1,4 @@
-﻿@model ProjetoAgenda.ViewModel.CadastroCompletoViewModel;
+﻿@model ProjetoAgenda.ViewModel.CadastroCompletoViewModel
 
 @{
     ViewData["Title"] = "Cadastrar Contato";
@@ -13,6 +13,7 @@
                 </div>
                 <div class="card-body bg-light">
                     <form asp-controller="Usuario" asp-action="CadastrarNoBanco" method="post">
+
                         <p class="text-center fs-5 fw-bold">Dados Pessoais</p>
 
                         <div class="mb-3">
@@ -108,49 +109,36 @@
                             <span asp-validation-for="Endereco.Bairro" class="text-danger"></span>
                         </div>
 
+                        <!-- ESTADO COM GET -->
                         <div class="mb-3">
-                            <label asp-for="Endereco.Cidade" class="form-label"></label>
-                            <input asp-for="Endereco.Cidade" class="form-control" />
+                            <label class="form-label">Estado</label>
+                            <select class="form-select" onchange="location.href='@Url.Action("CadastrarContato", "Usuario")?estadoSelecionadoId=' + this.value;">
+
+                                <option disabled)>Selecione o estado</option>
+                                @foreach (var estado in Model.Ufs)
+                                {
+                                    <option value="@estado.EstadoId">
+                                        @estado.NomeEstado
+                                    </option>
+                                }
+                            </select>
+                        </div>
+
+                        <!-- CIDADE BASEADA NO ESTADO -->
+                        <div class="mb-3">
+                            <label class="form-label">Cidade</label>
+                            <select asp-for="Endereco.Cidade" class="form-select">
+                                <option disabled selected>Selecione a cidade</option>
+                                @foreach (var cidade in Model.Cidades)
+                                {
+                                    <option value="@cidade.NomeCidade">@cidade.NomeCidade</option>
+                                }
+                            </select>
                             <span asp-validation-for="Endereco.Cidade" class="text-danger"></span>
                         </div>
 
-                        <div class="mb-3">
-                            <label asp-for="Endereco.Estado" class="form-label"></label>
-                            <select asp-for="Endereco.Estado" class="form-select">
-                                <option selected disabled>Selecione o estado</option>
-                                <option value="AC">Acre (AC)</option>
-                                <option value="AL">Alagoas (AL)</option>
-                                <option value="AP">Amapá (AP)</option>
-                                <option value="AM">Amazonas (AM)</option>
-                                <option value="BA">Bahia (BA)</option>
-                                <option value="CE">Ceará (CE)</option>
-                                <option value="DF">Distrito Federal (DF)</option>
-                                <option value="ES">Espírito Santo (ES)</option>
-                                <option value="GO">Goiás (GO)</option>
-                                <option value="MA">Maranhão (MA)</option>
-                                <option value="MT">Mato Grosso (MT)</option>
-                                <option value="MS">Mato Grosso do Sul (MS)</option>
-                                <option value="MG">Minas Gerais (MG)</option>
-                                <option value="PA">Pará (PA)</option>
-                                <option value="PB">Paraíba (PB)</option>
-                                <option value="PR">Paraná (PR)</option>
-                                <option value="PE">Pernambuco (PE)</option>
-                                <option value="PI">Piauí (PI)</option>
-                                <option value="RJ">Rio de Janeiro (RJ)</option>
-                                <option value="RN">Rio Grande do Norte (RN)</option>
-                                <option value="RS">Rio Grande do Sul (RS)</option>
-                                <option value="RO">Rondônia (RO)</option>
-                                <option value="RR">Roraima (RR)</option>
-                                <option value="SC">Santa Catarina (SC)</option>
-                                <option value="SP">São Paulo (SP)</option>
-                                <option value="SE">Sergipe (SE)</option>
-                                <option value="TO">Tocantins (TO)</option>
-                            </select>
-                            <span asp-validation-for="Endereco.Estado" class="text-danger"></span>
-                        </div>
                         <input type="hidden" name="Endereco.Situacao" value="Ativo" />
                         <input type="hidden" name="Telefone[0].Situacao" value="Ativo" />
-
 
                         <div class="mb-3">
                             <label asp-for="Endereco.Complemento" class="form-label"></label>
@@ -158,7 +146,7 @@
                             <span asp-validation-for="Endereco.Complemento" class="text-danger"></span>
                         </div>
 
-                        <div class="text-center" >
+                        <div class="text-center">
                             <button type="submit" class="btn btn-success ms-2">Salvar</button>
                             <a asp-controller="Usuario" asp-action="Index" class="btn btn-secondary ms-2">Cancelar</a>
                         </div>

@@ -177,23 +177,60 @@ namespace ProjetoAgenda.Controllers
 
 
         }
-
-
-        public IActionResult CadastrarContato()
+        [HttpGet]
+        public IActionResult CadastrarContato(int? estadoSelecionadoId)
         {
+            var estados = new EstadoCidade().GetEstados();
+
             var viewModel = new CadastroCompletoViewModel
             {
                 Usuario = new Usuario(),
                 Endereco = new Endereco(),
                 DocumentoIdentificacao = new DocumentoIdentificacao(),
-                Telefone = new List<Telefone> { new Telefone() }
+                Telefone = new List<Telefone> { new Telefone() },
+                Ufs = estados,
+                EstadoSelecionadoId = estadoSelecionadoId,
+                Cidades = new List<Cidade>()
             };
+
+            if(estadoSelecionadoId.HasValue)
+            {
+                var estado = estados.FirstOrDefault(e => e.EstadoId == estadoSelecionadoId.Value);
+                if (estado != null)
+                    viewModel.Cidades = estado.Cidades;
+
+            }
+
             return View(viewModel);
+       
         }
+
+        //[HttpGet]
+        //public IActionResult CadastrarContato()
+        //{
+        //    var viewModel = new CadastroCompletoViewModel
+        //    {
+        //        Usuario = new Usuario(),
+        //        Endereco = new Endereco(),
+        //        DocumentoIdentificacao = new DocumentoIdentificacao(),
+        //        Telefone = new List<Telefone> { new Telefone() },
+        //        Ufs = new EstadoCidade().GetEstados(),
+
+        //    };
+        //    return View(viewModel);
+        //}
 
         [HttpPost]
         public async Task<IActionResult> CadastrarNoBanco(CadastroCompletoViewModel viewModel)
         {
+            //viewModel.Ufs = new EstadoCidade().GetEstados();
+            //if(viewModel.EstadoSelecionadoId.HasValue)
+            //{
+            //    var estadoSelecionado =  
+            //}
+
+
+
             viewModel.Endereco.Situacao = "Ativo";
             Usuario usuario = viewModel.Usuario;
             viewModel.Endereco.Usuario = usuario;

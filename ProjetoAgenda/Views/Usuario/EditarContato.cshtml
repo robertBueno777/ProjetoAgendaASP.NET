@@ -100,11 +100,6 @@
                     </div>
 
                     <div class="mb-3">
-                        <label asp-for="Endereco.Cidade" class="form-label"></label>
-                        <input asp-for="Endereco.Cidade" class="form-control" />
-                    </div>
-
-                    <div class="mb-3">
                         <label asp-for="Endereco.Estado" class="form-label"></label>
                         <select asp-for="Endereco.Estado" class="form-select">
                             <option value="">Selecione o estado</option>
@@ -137,6 +132,13 @@
                             <option value="TO">Tocantins</option>
                         </select>
                     </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Endereco.Cidade" class="form-label"></label>
+                        <input asp-for="Endereco.Cidade" class="form-control" />
+                    </div>
+
+                    
 
                     <div class="mb-3">
                         <label asp-for="Endereco.Complemento" class="form-label"></label>
