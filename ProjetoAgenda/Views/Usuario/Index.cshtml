@@ -1,11 +1,15 @@
 ﻿@model List<ProjetoAgenda.Models.Usuario>;
 
+
 @{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center p-2 mb-4 rounded shadow" style="font-family: 'Inter', sans-serif; font-size: 48px; font-weight: 700; color: black; background: linear-gradient(to right, #e0e0e0, #ffffff); border: 2px solid black; ">
-    Agenda de Clientes
+
+
+<div class="text-center p-2 mb-4 rounded shadow"
+     style="font-family: 'Lora', serif; font-size: 48px; font-weight: 700; color: black; background: linear-gradient(to right, #e0e0e0, #ffffff); border: 2px solid black;">
+    👥 Agenda de Clientes 👥
 </div>
 
 
@@ -44,9 +48,9 @@ else
                     <td>
                         <div class="btn-group" role="group" aria-label="Basic mixed styles example" style="height:55px;">
 
-                            <a asp-controller="Usuario" asp-action="ApagarContato" asp-route-id="@usuario.UsuarioId" class="btn btn-danger" style="font-size:15px;align-content:center; ">Apagar</a>
-                            <a asp-controller="Usuario" asp-action="AdicionarCelular" asp-route-id="@usuario.UsuarioId" class="btn btn-warning" style="font-size:15px;align-content:center; ">Adicionar Celular</a>
-                            <a asp-controller="Usuario" asp-action="EditarContato" asp-route-id="@usuario.UsuarioId" style="font-size:15px;align-content:center;" class=" btn btn-success">Editar</a>
+                            <a asp-controller="Usuario" asp-action="ApagarContato" asp-route-id="@usuario.UsuarioId" class="btn btn-outline-danger" style="font-size:15px;align-content:center; ">Apagar</a>
+                            <a asp-controller="Usuario" asp-action="AdicionarCelular" asp-route-id="@usuario.UsuarioId" class="btn btn-outline-info" style="font-size:15px;align-content:center; ">Adicionar Celular</a>
+                            <a asp-controller="Usuario" asp-action="EditarContato" asp-route-id="@usuario.UsuarioId" style="font-size:15px;align-content:center;" class=" btn btn-outline-success">Editar</a>
                             <a asp-controller="Usuario" asp-action="VisualizarContato" asp-route-id="@usuario.UsuarioId" class="btn btn-outline-secondary" style="font-size:15px;align-content:center; ">Visualizar contato</a>
                         </div>
                     </td>

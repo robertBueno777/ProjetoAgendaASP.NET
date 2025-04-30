@@ -109,12 +109,11 @@
                             <span asp-validation-for="Endereco.Bairro" class="text-danger"></span>
                         </div>
 
-                        <!-- ESTADO COM GET -->
                         <div class="mb-3">
                             <label class="form-label">Estado</label>
-                            <select class="form-select" onchange="location.href='@Url.Action("CadastrarContato", "Usuario")?estadoSelecionadoId=' + this.value;">
+                            <select class="form-select" onchange="minhaFuncaoCidade">
 
-                                <option disabled)>Selecione o estado</option>
+                                <option disabled>Selecione o estado</option>
                                 @foreach (var estado in Model.Ufs)
                                 {
                                     <option value="@estado.EstadoId">
@@ -122,20 +121,31 @@
                                     </option>
                                 }
                             </select>
-                        </div>
+                        </div>                   
 
-                        <!-- CIDADE BASEADA NO ESTADO -->
+
                         <div class="mb-3">
                             <label class="form-label">Cidade</label>
                             <select asp-for="Endereco.Cidade" class="form-select">
                                 <option disabled selected>Selecione a cidade</option>
                                 @foreach (var cidade in Model.Cidades)
                                 {
-                                    <option value="@cidade.NomeCidade">@cidade.NomeCidade</option>
+                                    <option>@cidade.NomeCidade</option>
                                 }
                             </select>
                             <span asp-validation-for="Endereco.Cidade" class="text-danger"></span>
                         </div>
+
+
+
+                        <script>
+                            function minhFuncaoCidade(cidade){
+                                alert (cidade);
+                            }
+                        </script>
+
+
+
 
                         <input type="hidden" name="Endereco.Situacao" value="Ativo" />
                         <input type="hidden" name="Telefone[0].Situacao" value="Ativo" />

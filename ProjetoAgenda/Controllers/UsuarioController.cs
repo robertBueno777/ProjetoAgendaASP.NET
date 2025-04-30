@@ -236,6 +236,7 @@ namespace ProjetoAgenda.Controllers
             viewModel.Endereco.Usuario = usuario;
             viewModel.Endereco.Situacao ??= "Ativo";
             viewModel.DocumentoIdentificacao.Usuario = usuario;
+           
             foreach (var telefone in viewModel.Telefone)
             {
                 telefone.Usuario = usuario;
