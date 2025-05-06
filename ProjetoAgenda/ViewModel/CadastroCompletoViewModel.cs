@@ -10,7 +10,7 @@ namespace ProjetoAgenda.ViewModel
 
         public List<Estado> Ufs { get; set; }
 
-        public List<Cidade> Cidades { get; set; }
+        public List<Cidade> Cidades { get; set; } = new List<Cidade>();
         public int? EstadoSelecionadoId { get; set; }
         
 

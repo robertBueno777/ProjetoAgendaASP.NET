@@ -182,6 +182,7 @@ namespace ProjetoAgenda.Controllers
         {
             var estados = new EstadoCidade().GetEstados();
 
+
             var viewModel = new CadastroCompletoViewModel
             {
                 Usuario = new Usuario(),
@@ -220,6 +221,17 @@ namespace ProjetoAgenda.Controllers
         //    return View(viewModel);
         //}
 
+        [HttpGet]
+        public JsonResult ObterCidade(int id)
+        {
+            // var cidades = new EstadoCidade().GetEstados().Where(x => x.EstadoId == id).Select(x => x.Cidades).ToList();
+            var cidades = new EstadoCidade().GetEstados().First(x => x.EstadoId == id).Cidades.ToList();
+
+
+            return Json(new {sucesso = true, cidades = cidades});
+        }
+
+
         [HttpPost]
         public async Task<IActionResult> CadastrarNoBanco(CadastroCompletoViewModel viewModel)
         {
@@ -228,13 +240,20 @@ namespace ProjetoAgenda.Controllers
             //{
             //    var estadoSelecionado =  
             //}
+            var uf = new EstadoCidade().GetEstados().FirstOrDefault(x => x.EstadoId == Convert.ToInt32(viewModel.Endereco.Estado));
+
+            var cid = uf.Cidades.FirstOrDefault(x => x.CidadeId == Convert.ToInt32(viewModel.Endereco.Cidade));
+            viewModel.Endereco.Cidade = cid.NomeCidade;
+            viewModel.Endereco.Estado = uf.NomeEstado;
 
 
+           
 
             viewModel.Endereco.Situacao = "Ativo";
             Usuario usuario = viewModel.Usuario;
             viewModel.Endereco.Usuario = usuario;
             viewModel.Endereco.Situacao ??= "Ativo";
+            //o valor no cima com esse ?? significa que o e.s não pode ser nulo, se for ele se tornará ativo
             viewModel.DocumentoIdentificacao.Usuario = usuario;
            
             foreach (var telefone in viewModel.Telefone)
@@ -243,8 +262,11 @@ namespace ProjetoAgenda.Controllers
                 telefone.Situacao ??= "Ativo";
             }
             usuario.Endereco = viewModel.Endereco;
+            //usuario.Cidade = viewModel.Cidades;
+
             usuario.DocumentoIdentificacao = viewModel.DocumentoIdentificacao;
             usuario.Telefones = viewModel.Telefone;
+            viewModel.Ufs = new List<Estado>();
             ModelState.Clear();
             TryValidateModel(viewModel);
 
@@ -252,10 +274,12 @@ namespace ProjetoAgenda.Controllers
             {
                 _context.Usuarios.Add(usuario);
                 await _context.SaveChangesAsync();
+                viewModel.Ufs = new EstadoCidade().GetEstados();
                 return RedirectToAction("Index", "Usuario");
             }
             else
             {
+                //ta caindo aqui commit 10
                 foreach (var estado in ModelState)
                 {
                     foreach (var erro in estado.Value.Errors)

@@ -111,7 +111,8 @@
 
                         <div class="mb-3">
                             <label class="form-label">Estado</label>
-                            <select class="form-select" onchange="minhaFuncaoCidade">
+                            @*<input type="hidden" name="Endereco.Estado" />*@
+                            <select name="Endereco.Estado" class="form-select" id="Estado" onchange="ObterCidades()">
 
                                 <option disabled>Selecione o estado</option>
                                 @foreach (var estado in Model.Ufs)
@@ -121,28 +122,28 @@
                                     </option>
                                 }
                             </select>
-                        </div>                   
+                        </div>
 
 
                         <div class="mb-3">
                             <label class="form-label">Cidade</label>
-                            <select asp-for="Endereco.Cidade" class="form-select">
+                            <select name="Endereco.Cidade" id="Cidades"  class="form-select">
+
+                            </select>
+                            @* <select asp-for="Endereco.Cidade" class="form-select">
                                 <option disabled selected>Selecione a cidade</option>
                                 @foreach (var cidade in Model.Cidades)
                                 {
                                     <option>@cidade.NomeCidade</option>
                                 }
-                            </select>
+                            </select> *@
                             <span asp-validation-for="Endereco.Cidade" class="text-danger"></span>
                         </div>
 
 
 
-                        <script>
-                            function minhFuncaoCidade(cidade){
-                                alert (cidade);
-                            }
-                        </script>
+
+
 
 
 
@@ -166,3 +167,58 @@
         </div>
     </div>
 </div>
+@section Scripts {
+
+
+    <script type="text/javascript">
+                $(document).ready(function() {var cid;});
+        //Espera a página carregar para executar o código
+
+        function ObterCidades(){
+            //o '#' é pra identificar o id do estado
+            //document.getElementsByName("Endereco.Estado").value = $("#Estado option:selected").text();
+            //alert(document.getElementsByName("Endereco.Estado").value);
+            var idEstado = $("#Estado").val();
+            $("#Cidades").empty().append('<option selected="selected" value="-1">Selecione sua cidade</option>');
+            //var idEstado = document.getElementById("Estado").text;
+
+            $.ajax({
+                type: 'GET',
+                url: '/Usuario/ObterCidade/'+idEstado,
+
+                //data: {idUsuario:idUsuario, telefone:numero },
+                //contentType: 'application/json',
+                
+                dataType: "JSON",
+                success: function (response) {
+                    if (response.sucesso === true) {
+                        // alert(response.cidades[0].nomeCidade);
+                        // console.log(response.cidades);
+                        // cid = response.cidades;
+                        $.each(response.cidades, function(){
+                            $('<option/>', {
+                                'value': this.cidadeId,
+                                'text': this.nomeCidade
+                            }).appendTo('#Cidades');
+                        });
+
+
+                    }
+                    else{
+                        alert(response.mensagem);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    // var err = eval("(" + xhr.responseText + ")");
+                    alert(error);
+                }
+            });
+        }
+
+        function SelecionarCidade(){
+            document.getElementsByName("Endereco.Cidade").value = $("#Cidades option:selected").text();
+        }
+
+
+    </script>
+}
